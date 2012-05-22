@@ -1,0 +1,27 @@
+﻿#reveal .logo {
+	position: fixed;
+	width: 70px;
+	height: 70px;
+	z-index: 30;
+
+	left: 25px;
+	bottom: 25px;
+	background: url(../assets/img/logo3.png)
+}
+
+
+.rainbow {background: url(../assets/img/doublerainbow.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;}
+	
+/* http://gifstumblr.com/images/thats-all-folks_163.gif */
+.thats-all-folks {background: url(../assets/img/thats-all-folks.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;}
+	
+	
+.final {position:fixed;bottom:-50px;right:-50px;width:400px;height:200px;}

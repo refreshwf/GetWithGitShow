@@ -1,0 +1,279 @@
+<!doctype html>  
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		
+		<title>Get With Git</title>
+
+		<meta name="description" content="First RefreshWF presentation on Git and GitHub">
+		<meta name="author" content="Jorin Slaybaugh">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+		<link rel="stylesheet" href="lib/zenburn.css">
+		<link rel="stylesheet" href="css/show.css" />
+	</head>
+	
+	<body>
+		
+		<div id="reveal">
+
+			<!-- Used to fade in a background when a specific slide state is reached -->
+			<div class="state-background"></div>
+			
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Get with Git</h1>
+					<h2>An Intro to Distributed Version Control and why you should use it.</h2>
+					<p class="fragment">- or -<br />&nbsp;</p>
+					<h2 class="fragment">How I learned to stop worrying and love branching.</h2>
+					<i><small>Jorin Slaybaugh - Refresh Wichita Falls - May 21, 2012</small></i>
+				</section>
+				
+				<section>
+					<h2>Who am I</h2>
+					<ul>
+						<li class="fragment">VP of Technology at E-vent Software</li>
+						<li class="fragment">Live and work in Wichita Falls</li>
+						<li class="fragment">Graduated from MSU in 2002</li>
+						<li class="fragment">.NET | SQL | Windows</li>
+						<li class="fragment">HTML | CSS | JavaScript</li>
+						<li class="fragment">Twitter: <a href="http://twitter.com/jslaybaugh" target="_blank">@jslaybaugh</a></li>
+						<li class="fragment">Email: <a href="mailto:jslaybaugh@gmail.com" target="_blank">jslaybaugh@gmail.com</a></li>
+						<li class="fragment">Blog: <a href="http://cacheandquery.com" target="_blank">cacheandquery.com</a></li>
+						<li class="fragment">All the rest: <a href="http://flavors.me/jslaybaugh" target="_blank">flavors.me/jslaybaugh</a></li>
+					</ul>
+				</section>
+				
+				<section>
+					<h2>Disclaimers</h2>
+					<p class="fragment"><img src="http://d.pr/i/lU5+" height="230" /></p>
+					<p class="fragment">Just a brief introduction</p>
+					<p class="fragment">First (and most common) commands/concepts are simple</p>
+					<p class="fragment">Steep learning curve after that</p>
+					<p class="fragment">I am NOT an expert</p>
+				</section>
+				
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Brief History of Git</h2>
+						<p class="fragment">Created in 2005 by Linus Torvalds</p>
+						<img class="fragment" src="assets/img/linus.jpg" />  <img class="fragment" src="assets/img/penguin.jpg" />
+					</section>
+					<section>
+						<h2>Why?</h2>
+						<p class="fragment">Working on Linux kernel and needed better version control system than what they were using (BitKeeper). So, if it doesn't exist (and you're Linus Torvalds), you create it yourself.</p>
+						<p class="fragment">Had been using tarballs and patches so he built the system around a similar concept: snapshots of a point in time stored as binary objects in directory.</p>
+						<p class="fragment">Finished the code in less than a month and 1.0 was released later that year (only on version 1.7 in 2012)</p>
+					</section>
+					<section>
+						<h2>Purposes</h2>
+						<h3 class="fragment">Need to be able to incrementally advance<br />(and roll back) projects</h3>
+						<p class="fragment">Good ol' Copy & Paste</p>
+						<p class="fragment">Subversion, SourceSafe, TFS</p>
+						<p>&nbsp;</p>
+						<h3 class="fragment">Need to work with a team</h3>
+						<p class="fragment">Every person has full copy of repository</p>
+						<p class="fragment">Mercurial (Hg) is similar to Git</p>
+					</section>
+					<section>
+						<h2>Is this really that important?</h2>
+						<p>&nbsp;</p>
+						<div class="fragment">
+							<blockquote>This is too important to miss out on. This is possibly the biggest advance in software development technology in ten years...</blockquote>
+							<small><br />- Joel Spolsky, Co-founder of StackOverflow, 2010</small>
+						</div>
+						<p>&nbsp;</p>
+						<h3 class="fragment">Oh... OK. Where do we start?</h3>
+					</section>
+
+					<section>
+						<p><img src="assets/img/yodawg.png" /></p>
+					</section>
+
+					<section>
+						<h2>A few more things:</h2>
+						<p>&nbsp;</p>
+						<p>Not going to go through the git installation procedure becuase its slightly different for each OS and there really isn't time in this presentation, but there are very good directions <a href="http://help.github.com/win-set-up-git/" target="_blank">here</a> (for Windows) and <a href="http://help.github.com/mac-set-up-git/" target="_blank">here</a> (for Mac).</p>
+						<p>&nbsp;</p>
+						<ul>
+							<li>Unix-style BASH</li>
+							<li>GUI Shell Extensions</li>
+							<li>TortoiseGit</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>It's <del>Peanut Butter Jelly</del><br />Example Time!</h2>
+						<p>&nbsp;</p>
+						<p><img src="http://i0.kym-cdn.com/entries/icons/original/000/000/188/DancingBannana.gif" /></p>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>GitHub</h2>
+						<p><a href="http://octodex.github.com" target="_blank"><img src="http://octodex.github.com/images/original.jpg" height="400" /></a></p>
+					</section>
+
+					<section>
+						<h2>So, Git is cool! But, what is GitHub?</h2>
+						<ul class="fragment">
+							<li>Hosted git repositories for everyone!</li>
+							<li>Original Slogan: <q>Git hosting: no longer a pain in the ass</q></li>
+							<li><a href="https://github.com/plans" target="_blank">Free for open source, affordable for closed projects</a></li>
+							<li>Founded in 2008. As of February 2012, 1.3+ million users and 2+ million repositories</li>
+							<li>3 founders in 2008. 8 employees in 2010. 70+ employees right now. NO venture capital.</li>
+							<li><a href="https://gist.github.com/" target="_blank">Gists</a>, <a href="http://pages.github.com/" target="_blank">Project Pages</a>, Issues, <a href="http://mac.github.com/" target="_blank">GitHub for Mac</a>, <a href="http://windows.github.com/" target="_blank">GitHub for Windows</a>, Watching Repo's, and more...</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>It's <del>Peanut Butter Jelly</del><br />Example Time!</h2>
+						<p>&nbsp;</p>
+						<p><img src="http://i0.kym-cdn.com/entries/icons/original/000/000/188/DancingBannana.gif" /></p>
+					</section>
+
+					<section>
+						<h2>Cool Open Source Projects<br />Available on GitHub</h2>
+						<ul class="fragment">
+							<li><a href="https://github.com/jquery/jquery" target="_blank">jQuery</a></li>
+							<li><a href="https://github.com/twitter/bootstrap/" target="_blank">Twitter Bootstrap</a></li>
+							<li><a href="https://github.com/mirrors/linux" target="_blank">Linux</a></li>
+							<li><a href="https://github.com/rails/rails" target="_blank">Rails</a></li>
+							<li><a href="https://github.com/git/git" target="_blank">Git</a></li>
+							<li><a href="https://github.com/refreshwf" target="_blank">Refresh Wichita Falls</a></li>
+							<li><a href="https://github.com/hakimel/reveal.js" target="_blank">reveal.js</a></li>
+							<li><a href="https://github.com/repositories" target="_blank">So many more...</a></li>
+						</ul>
+					</section>
+					
+					<section>
+						<h2>Should I/my code be on GitHub?</h2>
+						<p class="fragment">Do you like having complete, versioned, accessible code automatically backed up to the cloud?</p>
+						<p class="fragment">Do you work on multiple machines?</p>
+						<p class="fragment">Do you work with anyone else?</p>
+						<p class="fragment">Do you want a job?<br /><img src="http://d.pr/i/y97o+" /></p>
+					</section>
+
+					<section>
+						<h2>The future & Applications</h2>
+						<blockquote>Ryan Blair, a technologist with the New York State Senate, thinks it could even give citizens a way to fork the law &#151; proposing their own amendments to elected officials. A tool like GitHub could also make it easier for constituents to track and even voice their opinions on changes to complex legal code. <q>When you really think about it, a bill is a branch of the law,</q> he says. <q>I'm just in love with the idea of a constituent being able to send their state senator a pull request.</q></blockquote>
+						<small> - <a href="http://www.wired.com/wiredenterprise/2012/02/github/all/1" target="_blank"><q>Lord of the Files</q>, Wired Magazine 2012</a></small>
+					</section>
+				</section>
+
+				<section>
+					<h2>Personal Experience - Stripe.net</h2>
+					<ul class="fragment">
+						<li>Found an <a href="https://github.com/jaymedavis/stripe.net" target="_blank">awesome library</a></li>
+						<li>Needed to be finished, so I forked and submitted pull request</li>
+						<li>Needed my own bit of <a href="https://github.com/jslaybaugh/stripe.net/tree/live-test" target="_blank">personal awesome</a></li>
+						<li>Jayme rejected my suggestion :-(</li>
+						<li>Can still pull in upstream changes from original repo!</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Fun</h2>
+					<p>&nbsp;</p>
+					<h2><a href="http://www.heroku.com/" target="_blank">Heroku</a> + <a href="http://hubot.github.com/" target="_blank">Hubot</a> + <a href="http://hipchat.com" target="_blank">HipChat</a></h2>
+				</section>
+
+				<section>
+					<h2>Want to Learn More?</h2>
+					<ul>
+						<li><a href="http://help.github.com/" target="_blank">GitHub Help</a> - FREE</li>
+						<li><a href="http://git-scm.com/" target="_blank">Git Project Homepage</a> - FREE</li>
+						<li><a href="http://www.amazon.com/gp/product/1430218339?ie=UTF8&tag=prgi-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1430218339" target="_blank">Pro Git</a> - Book By Scott Chacon (CIO of GitHub) - $20</li>
+						<li><a href="http://tekpub.com/productions/git" target="_blank">Tekpub</a> - 3 hours video $15</li>
+						<li><a href="https://github.com/crane-west/cwGuides/blob/master/git-standards.md#git-resources" target="_blank">Git Standards/Resources</a> - Crane | West - FREE</li>
+					</ul>
+				</section>
+
+				<section data-state="thats-all-folks">
+					<h3 class="final">Thanks for your time!<br />Questions? Comments?</h3>
+				</section>
+				
+			</div>
+
+			<aside class="logo"></aside>
+
+			<!-- The navigational controls UI -->
+			<aside class="controls">
+				<a class="left" href="#">&#x25C4;</a>
+				<a class="right" href="#">&#x25BA;</a>
+				<a class="up" href="#">&#x25B2;</a>
+				<a class="down" href="#">&#x25BC;</a>
+			</aside>
+
+			<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+			<div class="progress"><span></span></div>
+			
+		</div>
+		
+		<script src="js/reveal.js"></script>
+
+		<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+		<script src="lib/highlight.js"></script>
+		<script src="lib/classList.js"></script>
+		
+		<script>
+			// Parse the query string into a key/value object
+			var query = {};
+			location.search.replace( /[A-Z0-9]+?=(\w*)/gi, function(a) {
+				query[ a.split( '=' ).shift() ] = a.split( '=' ).pop();
+			} );
+
+			// Fires when a slide with data-state=customevent is activated
+			Reveal.addEventListener( 'customevent', function() {
+				alert( '"customevent" has fired' );
+			} );
+
+			// Fires each time a new slide is activated
+			Reveal.addEventListener( 'slidechanged', function( event ) {
+				// event.indexh & event.indexv
+			} );
+
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// If true; each slide will be pushed to the browser history
+				history: true,
+
+				// Loops the presentation, defaults to false
+				loop: false,
+
+				// Flags if mouse wheel navigation should be enabled
+				mouseWheel: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// UI style
+				theme: query.theme || 'default', // default/neon
+
+				// Transition style
+				transition: query.transition || 'default' // default/cube/page/concave/linear(2d)
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+	</body>
+</html>
